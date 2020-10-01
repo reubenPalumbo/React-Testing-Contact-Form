@@ -19,13 +19,13 @@ const ContactForm = () => {
             id="firstName"
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            // ref={register({ required: true, maxLength: 3 })}
+            ref={register({ required: true, maxLength: 20 })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
-
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
@@ -38,7 +38,6 @@ const ContactForm = () => {
             <p>Looks like there was an error: {errors.lastName.type}</p>
           )}
         </div>
-
         <div>
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
@@ -57,15 +56,13 @@ const ContactForm = () => {
             ref={register({ required: false })}
           />
         </div>
-
         {data && (
           <div data-testid="end">
             <pre id="end" style={{ textAlign: "left", color: "white" }}>
               {JSON.stringify(data, null, 2)}
             </pre>
           </div>
-        )}
-
+        )}{" "}
         <input data-testid="button" type="submit" />
       </form>
     </div>
